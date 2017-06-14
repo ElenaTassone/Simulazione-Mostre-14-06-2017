@@ -48,7 +48,7 @@ public class ArtsmiaController {
 
     @FXML
     void handleSimula(ActionEvent event) {
-
+    	int studenti = Integer.parseInt(txtFieldStudenti.getText());
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
