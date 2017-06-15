@@ -5,10 +5,12 @@
 package it.polito.tdp.artsmia;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.artsmia.model.Model;
 import it.polito.tdp.artsmia.model.Mostra;
+import it.polito.tdp.artsmia.model.Studente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -49,6 +51,10 @@ public class ArtsmiaController {
     @FXML
     void handleSimula(ActionEvent event) {
     	int studenti = Integer.parseInt(txtFieldStudenti.getText());
+    	int anno = boxAnno.getValue();
+    	List<Studente> classifica = m.creaSimulazione(studenti, anno);
+    	for(Studente s : classifica)
+    		txtResult.appendText(""+s.getOpereViste().size()+"\n");
     }
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
